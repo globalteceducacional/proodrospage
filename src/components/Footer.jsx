@@ -1,26 +1,17 @@
-import { addressLine, company } from '../data/company.js'
-import { phoneUrl } from '../lib/contact.js'
-import { CopyCnpj } from './CopyCnpj.jsx'
-
 export function Footer() {
-  const year = new Date().getFullYear()
-
   return (
-    <footer>
-      <div className="footer-brand">
-        <a className="brand footer-logo" href="#inicio">
-          <span className="brand-logo-crop">
-            <img src="/assets/logotipo-proodos-oficial.png" alt="Proodos - Inteligência e Inovação" />
-          </span>
-        </a>
-        <p>{company.legalName} · Grupo GlobalTec Educacional</p>
-        <p>{addressLine()}</p>
-      </div>
-      <div className="footer-meta">
-        <p>CNPJ {company.cnpj}</p>
-        <CopyCnpj />
-        <p><a href={phoneUrl()}>{company.phoneDisplay}</a></p>
-        <p>© {year} Proodos. Todos os direitos reservados.</p>
+    <footer className="wrap">
+      <div className="foot">
+        <div>
+          <strong>Proodos Tecnologia e Inovação Ltda.</strong>
+          <br />
+          CNPJ 38.891.716/0001-07 · São Luís, Maranhão
+        </div>
+        <div>
+          Conteúdo institucional · Setembro de 2026
+          <br />
+          <a href="#home">Voltar ao início ↑</a>
+        </div>
       </div>
     </footer>
   )

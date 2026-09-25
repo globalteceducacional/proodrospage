@@ -1,43 +1,34 @@
-import { useCallback, useState } from 'react'
 import { About } from './components/About.jsx'
-import { Capabilities } from './components/Capabilities.jsx'
-import { Contact } from './components/Contact.jsx'
-import { Evidence } from './components/Evidence.jsx'
+import { Competencies } from './components/Competencies.jsx'
+import { Cooperation } from './components/Cooperation.jsx'
 import { Footer } from './components/Footer.jsx'
 import { Governance } from './components/Governance.jsx'
 import { Header } from './components/Header.jsx'
 import { Hero } from './components/Hero.jsx'
+import { Impact } from './components/Impact.jsx'
+import { Institutional } from './components/Institutional.jsx'
+import { IntroStrip } from './components/IntroStrip.jsx'
 import { Pdi } from './components/Pdi.jsx'
-import { Project } from './components/Project.jsx'
-import { Team } from './components/Team.jsx'
-import { useActiveSection } from './hooks/useActiveSection.js'
+import { Trajectory } from './components/Trajectory.jsx'
+import { Zaki } from './components/Zaki.jsx'
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [subjectIntent, setSubjectIntent] = useState(null)
-  const activeId = useActiveSection()
-  const closeMenu = useCallback(() => setMenuOpen(false), [])
-  const toggleMenu = useCallback(() => setMenuOpen((open) => !open), [])
-
-  const chooseSubject = useCallback((subject) => {
-    setSubjectIntent({ subject, at: Date.now() })
-    setMenuOpen(false)
-  }, [])
-
   return (
     <>
-      <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
-      <Header open={menuOpen} onToggle={toggleMenu} onClose={closeMenu} activeId={activeId} />
-      <main id="conteudo">
+      <a className="skip" href="#conteudo">Ir para o conteúdo</a>
+      <Header />
+      <main className="wrap" id="conteudo">
         <Hero />
+        <IntroStrip />
         <About />
-        <Capabilities />
-        <Project onChooseSubject={chooseSubject} />
+        <Trajectory />
+        <Competencies />
         <Pdi />
-        <Evidence />
-        <Team />
+        <Zaki />
+        <Impact />
+        <Cooperation />
         <Governance />
-        <Contact subjectIntent={subjectIntent} />
+        <Institutional />
       </main>
       <Footer />
     </>

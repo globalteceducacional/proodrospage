@@ -1,28 +1,24 @@
+const PRINCIPLES = [
+  'Proteção de dados desde a concepção.',
+  'Gestão de riscos técnicos, éticos e operacionais.',
+  'Validação humana em decisões críticas.',
+  'Barreiras de segurança entre modelos generativos e atuadores físicos.',
+  'Documentação, rastreabilidade e reprodutibilidade.',
+  'Avaliação contínua de desempenho e limitações.',
+]
+
 export function Governance() {
   return (
-    <section className="section governance" id="governanca">
-      <div className="section-tag">07 · Governança &amp; IA responsável</div>
-      <div className="governance-grid">
-        <div className="governance-visual" aria-hidden="true">
-          <div className="g-ring r1"></div>
-          <div className="g-ring r2"></div>
-          <div className="g-ring r3"></div>
-          <div className="g-center">IA<br /><small>responsável</small></div>
-          <span className="g-label l1">Privacidade</span>
-          <span className="g-label l2">Segurança</span>
-          <span className="g-label l3">Equidade</span>
-          <span className="g-label l4">Transparência</span>
-        </div>
-        <div>
-          <h2>Inovação com controle, responsabilidade e confiança</h2>
-          <p className="large">A governança acompanha o projeto desde a definição dos dados até o monitoramento da solução em uso.</p>
-          <ul className="checklist">
-            <li><span>✓</span> Proteção de dados e privacidade desde o projeto</li>
-            <li><span>✓</span> Gestão de riscos técnicos, éticos e operacionais</li>
-            <li><span>✓</span> Validação humana e critérios de desempenho</li>
-            <li><span>✓</span> Documentação, reprodutibilidade e prestação de contas</li>
-          </ul>
-        </div>
+    <section id="ia-responsavel" className="section">
+      <div className="section-heading">
+        <span className="eyebrow">08 / PROODOS</span>
+        <h2>IA Responsável</h2>
+      </div>
+      <div className="section-content">
+        <p>A Proodos adota princípios de governança desde a concepção dos projetos. Sistemas que interagem com o ambiente físico devem operar com controles verificáveis, limites de atuação, supervisão humana e registros adequados ao risco.</p>
+        <ul className="features">
+          {PRINCIPLES.map((item) => <li key={item}>{item}</li>)}
+        </ul>
       </div>
     </section>
   )
