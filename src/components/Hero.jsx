@@ -1,16 +1,24 @@
+import { BrandBars } from './BrandBars.jsx'
+
 export function Hero() {
   return (
     <section className="hero" id="home">
-      <div>
+      <div className="hero-copy">
         <span className="eyebrow">Engenharia · Software · Inteligência artificial</span>
         <h1>Conhecimento aplicado.<br /><em>Tecnologia para o setor produtivo.</em></h1>
         <p>Engenharia, desenvolvimento de software, inteligência artificial, integração de sistemas e design de produto convergem na atuação da Proodos. Estamos estruturando uma capacidade própria de pesquisa, desenvolvimento e inovação para transformar conhecimento aplicado em soluções seguras, úteis e capazes de elevar a produtividade.</p>
         <p className="actions">
-          <a className="btn" href="#zaki-ia">Conheça o ZAKI-IA ↗</a>
+          <a className="btn" href="#zaki-ia">Conheça o ZAKI-IA <span aria-hidden="true">↗</span></a>
           <a className="btn light" href="#competencias">Nossas competências</a>
         </p>
       </div>
       <div className="visual">
+        <div className="orbit" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
+        <BrandBars className="visual-bars" />
         <span className="eyebrow">Primeiro programa estruturado de PD&I</span>
         <div>
           <div className="zaki">ZAKI-IA</div>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Logo } from './BrandBars.jsx'
 
 const LINKS = [
   ['home', 'Home'],
@@ -10,7 +11,7 @@ const LINKS = [
   ['impacto', 'Impacto'],
   ['cooperacao', 'Cooperação'],
   ['ia-responsavel', 'IA Responsável'],
-  ['dados-institucionais', 'Dados Institucionais'],
+  ['dados-institucionais', 'Dados'],
 ]
 
 export function Header() {
@@ -23,7 +24,9 @@ export function Header() {
   return (
     <header>
       <div className="wrap top">
-        <a className="brand" href="#home" aria-label="Proodos início" onClick={close}>proodos<span>.</span></a>
+        <a className="brand" href="#home" aria-label="Proodos início" onClick={close}>
+          <Logo compact />
+        </a>
         <button
           className="menu-toggle"
           type="button"
@@ -32,7 +35,7 @@ export function Header() {
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
-          Menu
+          {open ? 'Fechar' : 'Menu'}
         </button>
         <nav
           id="menu"

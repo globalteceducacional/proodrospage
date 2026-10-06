@@ -10,16 +10,17 @@ const ITEMS = [
 export function Impact() {
   return (
     <section id="impacto" className="section">
-      <div className="section-heading">
+      <div className="section-heading reveal">
         <span className="eyebrow">06 / PROODOS</span>
         <h2>Impacto</h2>
       </div>
       <div className="section-content">
-        <h3>Impacto industrial e desenvolvimento nacional</h3>
-        <p>A atuação da Proodos prioriza resultados que possam fortalecer a indústria brasileira e a sua cadeia de valor. A empresa orientará o ZAKI-IA por indicadores de produtividade, qualidade, confiabilidade, formação profissional e maturidade tecnológica.</p>
+        <h3 className="reveal">Impacto industrial e desenvolvimento nacional</h3>
+        <p className="reveal">A atuação da Proodos prioriza resultados que possam fortalecer a indústria brasileira e a sua cadeia de valor. A empresa orientará o ZAKI-IA por indicadores de produtividade, qualidade, confiabilidade, formação profissional e maturidade tecnológica.</p>
         <div className="cards">
-          {ITEMS.map(([title, text]) => (
-            <article className="card" key={title}>
+          {ITEMS.map(([title, text], index) => (
+            <article className="card reveal" key={title} style={{ '--delay': `${index * 70}ms` }}>
+              <span className="card-glow" aria-hidden="true" />
               <h3>{title}</h3>
               <p>{text}</p>
             </article>

@@ -1,9 +1,18 @@
+const ITEMS = [
+  ['Origem e sede', 'São Luís, Maranhão'],
+  ['Capacidade em estruturação', 'Pesquisa, desenvolvimento e inovação'],
+  ['Orientação', 'Tecnologia nacional e cooperação'],
+]
+
 export function IntroStrip() {
   return (
     <div className="intro-strip">
-      <div><span>Origem e sede</span><strong>São Luís, Maranhão</strong></div>
-      <div><span>Capacidade em estruturação</span><strong>Pesquisa, desenvolvimento e inovação</strong></div>
-      <div><span>Orientação</span><strong>Tecnologia nacional e cooperação</strong></div>
+      {ITEMS.map(([label, value], index) => (
+        <div className="intro-cell reveal" key={label} style={{ '--delay': `${index * 80}ms` }}>
+          <span>{label}</span>
+          <strong>{value}</strong>
+        </div>
+      ))}
     </div>
   )
 }

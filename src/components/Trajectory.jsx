@@ -8,20 +8,20 @@ const STEPS = [
 export function Trajectory() {
   return (
     <section id="trajetoria" className="section">
-      <div className="section-heading">
+      <div className="section-heading reveal">
         <span className="eyebrow">02 / PROODOS</span>
         <h2>Trajetória</h2>
       </div>
       <div className="section-content">
-        <p>A trajetória da Proodos mostra uma empresa que partiu de uma base operacional no Maranhão e, em poucos anos, redirecionou a sua atuação para a tecnologia e a inovação. Cada etapa desse percurso preparou a seguinte: a constituição da empresa formou a base patrimonial, a operação regular consolidou resultados positivos, a mudança de denominação e de objeto social abriu espaço para a engenharia, o software e o design de produto, e o Projeto ZAKI-IA inaugura agora o primeiro programa formal de PD&I da empresa.</p>
-        <div className="cards">
-          {STEPS.map(([year, text]) => (
-            <article className="card" key={year}>
-              <h3>{year}</h3>
+        <p className="reveal">A trajetória da Proodos mostra uma empresa que partiu de uma base operacional no Maranhão e, em poucos anos, redirecionou a sua atuação para a tecnologia e a inovação. Cada etapa desse percurso preparou a seguinte: a constituição da empresa formou a base patrimonial, a operação regular consolidou resultados positivos, a mudança de denominação e de objeto social abriu espaço para a engenharia, o software e o design de produto, e o Projeto ZAKI-IA inaugura agora o primeiro programa formal de PD&I da empresa.</p>
+        <ol className="timeline">
+          {STEPS.map(([year, text], index) => (
+            <li className="reveal" key={year} style={{ '--delay': `${index * 90}ms` }}>
+              <span className="year">{year}</span>
               <p>{text}</p>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   )

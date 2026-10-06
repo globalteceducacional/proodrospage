@@ -11,14 +11,19 @@ const ITEMS = [
 export function Competencies() {
   return (
     <section id="competencias" className="section">
-      <div className="section-heading">
+      <div className="section-heading reveal">
         <span className="eyebrow">03 / PROODOS</span>
         <h2>Competências</h2>
       </div>
       <div className="section-content">
-        <p>A Proodos organiza a sua atuação em áreas de competência que decorrem do seu objeto social e que convergem para o desenvolvimento de sistemas inteligentes aplicados a produtos físicos. Essas áreas combinam engenharia, software, inteligência artificial e design, e formam a base sobre a qual a empresa estrutura o Projeto ZAKI-IA. Algumas delas já fazem parte da operação atual da empresa, enquanto outras, como a inteligência artificial embarcada e a governança de sistemas de IA, a Proodos pretende consolidar como competência interna ao longo do Projeto ZAKI-IA.</p>
+        <p className="reveal">A Proodos organiza a sua atuação em áreas de competência que decorrem do seu objeto social e que convergem para o desenvolvimento de sistemas inteligentes aplicados a produtos físicos. Essas áreas combinam engenharia, software, inteligência artificial e design, e formam a base sobre a qual a empresa estrutura o Projeto ZAKI-IA. Algumas delas já fazem parte da operação atual da empresa, enquanto outras, como a inteligência artificial embarcada e a governança de sistemas de IA, a Proodos pretende consolidar como competência interna ao longo do Projeto ZAKI-IA.</p>
         <ul className="features">
-          {ITEMS.map((item) => <li key={item}>{item}</li>)}
+          {ITEMS.map((item, index) => (
+            <li className="reveal" key={item} style={{ '--delay': `${index * 60}ms` }}>
+              <span className="feature-index">{String(index + 1).padStart(2, '0')}</span>
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
     </section>
