@@ -1,5 +1,5 @@
 # O container só aparece no host em 127.0.0.1:8090.
-# O Nginx do Ubuntu encaminha https://prodoosti.com para essa porta.
+# O Nginx do Ubuntu encaminha https://proodosti.com para essa porta.
 # Portas já usadas na VPS: 3000, 3001, 3150, 3306, 4000, 5173, 8080, 9000.
 services:
   web:
